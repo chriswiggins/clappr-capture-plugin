@@ -1,0 +1,19 @@
+<head>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
+  <script type="text/javascript" src="../dist/clappr-capture-plugin.js"></script>
+</head>
+<body>
+  <div id="player"></div>
+  <script>
+    var player = new Clappr.Player({
+    	source: "http://clappr.io/highline.mp4",
+    	parentId: "#player",
+    	plugins: [ClapprCapturePlugin]
+    });
+
+    player.core.mediaControl.on('capture:base64', (b64) => {
+      var myWindow = window.open("", "PictureWindow");
+      myWindow.document.write(`<img src="${b64}" />`);
+    });
+  </script>
+</body>
