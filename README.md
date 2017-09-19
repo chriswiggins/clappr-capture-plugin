@@ -26,7 +26,14 @@ var player = new Clappr.Player({
 ```
 That's it, a button will be shown on the media control to enable capture. This only works with playback tech's that use a `<video>` tag to display video
 
-See the demo for how to capture the event.
+To capture the event, just listen to the `capture:base64` event on the mediaControl container:
+
+```javascript
+player.core.mediaControl.on('capture:base64', (b64) => {
+  var myWindow = window.open("", "PictureWindow");
+  myWindow.document.write(`<img src="${b64}" />`);
+});
+```
 
 # Demo
 To run the demo start a web server with the root directory being the root of this repo, and then browse to the "index.html" file in the "demo" folder. The demo will open a new window with the captured image after the button has been clicked

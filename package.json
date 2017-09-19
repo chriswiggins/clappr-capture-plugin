@@ -1,6 +1,6 @@
 {
   "name": "clappr-capture-plugin",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A plugin for clappr which adds a button to take an image capture of the current video screen",
   "main": "dist/clappr-capture-plugin.js",
   "scripts": {
